@@ -1,0 +1,188 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  .hero-inner {
+    background: $white;
+    position: relative;
+    width: 99vw;
+    height: 100vh; //fallback option
+    height: calc(var(--vh, 1vh) * 100);
+    @include media("<=tablet") {
+      width: 95vw;
+    }
+    .hero-text-container {
+      position: absolute;
+      left: 10%;
+      top: 22%;
+      width: 50%;
+      @include media("<desktop") {
+        top: 18%;
+        left: 5%;
+      }
+      @include media("<=1043px") {
+        top: 18%;
+        left: 2%;
+      }
+      @include media("<=tablet") {
+        top: 25%;
+        width: 100%;
+        bottom: 50%;
+      }
+      .hero-text-inner {
+        display: flex;
+        flex-direction: column;
+        h2 {
+          font-size: 3rem;
+          font-weight: 700;
+          z-index: 9;
+          color: $white;
+          mix-blend-mode: difference;
+          @include media("<desktop") {
+            font-size: 2.1rem;
+          }
+          @include media("<=875px") {
+            font-size: 1.6rem;
+          }
+          .headline {
+            position: relative;
+            height: 118px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            align-items: center;
+            @include media("<=tablet") {
+              height: 80px;
+            }
+            span {
+              display: inline-block;
+              position: absolute;
+              mark {
+                display: inline-block;
+                line-height: 0;
+                padding-bottom: 0.5em;
+                background-color: darken(#aae574, 50);
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      .mail-line {
+        a {
+          text-decoration: none;
+          color: $purple;
+          font-size: 2rem;
+          &:hover {
+            color: darken($purple, 10%);
+          }
+        }
+      }
+    }
+    .hero-img-container {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 10%;
+      top: 15%;
+      z-index: 9;
+      @include media("<desktop") {
+        right: 5%;
+      }
+      @include media("<=1043px") {
+        top: 18%;
+        right: 0%;
+      }
+      @include media("<=tablet") {
+        display: none;
+        top: 12.5%;
+        left: 5%;
+      }
+      .hero-img {
+        z-index: 10;
+        width: 600px;
+        @include media("<desktop") {
+          width: 450px;
+        }
+        @include media("<=875px") {
+          width: 400px;
+        }
+        @include media("<=tablet") {
+          width: 300px;
+        }
+        &.turn-white {
+          filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(353deg)
+            brightness(102%) contrast(102%);
+        }
+      }
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 7.5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .mouse {
+        width: 1.5rem;
+        height: 3rem;
+        border: 2px solid $purple;
+        border-radius: 2rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        animation: arrow-down 1s alternate infinite;
+        @keyframes arrow-down {
+          0% {
+            border-right-color: lighten($purple, 15);
+            border-bottom-color: lighten($purple, 15);
+          }
+          100% {
+            border-right-color: darken($purple, 15);
+            border-bottom-color: darken($purple, 15);
+          }
+        }
+        span {
+          display: block;
+          width: 0.6rem;
+          height: 0.6rem;
+          border-radius: 50%;
+          margin: auto;
+          animation: move-wheel 1.2s linear infinite;
+          @keyframes move-wheel {
+            0% {
+              background: lighten($purple, 15);
+              transform: translateY(-1rem);
+            }
+            100% {
+              background: darken($purple, 15);
+              transform: translateY(1rem);
+            }
+          }
+        }
+      }
+      .arrow {
+        span {
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          border: 2px solid transparent;
+          border-right-color: $black;
+          border-bottom-color: $black;
+          transform: rotate(45deg);
+          animation: arrow-down 1s alternate infinite;
+          @keyframes arrow-down {
+            0% {
+              border-right-color: lighten($purple, 15);
+              border-bottom-color: lighten($purple, 15);
+            }
+            100% {
+              border-right-color: darken($purple, 15);
+              border-bottom-color: darken($purple, 15);
+            }
+          }
+        }
+      }
+    }
+  }
+}

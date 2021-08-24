@@ -1,0 +1,90 @@
+.about {
+  .about-inner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+    .knowledge-container {
+      width: 40%;
+      @include media("<=tablet") {
+        width: 100%;
+      }
+      @include media(">tablet") {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+      }
+      .languages {
+        h3 {
+          font-size: 1.4rem;
+          letter-spacing: 0.1rem;
+          word-spacing: 0.4rem;
+          font-weight: 700;
+        }
+        .lang-images-container {
+          img {
+            display: inline-block;
+            margin-right: 3rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+      .technologies {
+        margin-top: 1.5rem;
+        h3 {
+          font-size: 1.4rem;
+          letter-spacing: 0.1rem;
+          word-spacing: 0.4rem;
+          font-weight: 700;
+        }
+        .tech-images-container {
+          img {
+            display: inline-block;
+            margin-right: 3rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+    .about-me {
+      width: 60%;
+      @include media("<=tablet") {
+        width: 100%;
+      }
+      @include media(">tablet") {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+      }
+      h2 {
+        color: $purple;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+        word-spacing: 0.5rem;
+        font-weight: 600;
+        text-shadow: 12rem 0 lighten($purple, 35),
+          24rem 0 lighten($purple, 42.5), 36rem 0 lighten($purple, 50);
+        @include media("<=tablet") {
+          font-size: 1.2rem;
+          letter-spacing: 0.1rem;
+          text-shadow: 10rem 0 lighten($purple, 35),
+            20rem 0 lighten($purple, 42.5);
+        }
+      }
+      p {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

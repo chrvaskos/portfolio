@@ -1,0 +1,21 @@
+.intro-overlay {
+  position: absolute;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  z-index: 9;
+  .overlay-left {
+    background: $black;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50vw;
+  }
+  .overlay-right {
+    background: $black;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50vw;
+  }
+}

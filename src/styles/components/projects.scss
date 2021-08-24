@@ -1,0 +1,99 @@
+.projects {
+  margin-top: 4rem;
+  h2 {
+    color: $purple;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    word-spacing: 0.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-shadow: 12rem 0 lighten($purple, 35), 24rem 0 lighten($purple, 42.5),
+      36rem 0 lighten($purple, 50);
+    @include media("<=tablet") {
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+      text-shadow: 10rem 0 lighten($purple, 35), 20rem 0 lighten($purple, 42.5);
+    }
+  }
+  .projects-inner {
+    display: flex;
+    flex-wrap: wrap;
+    .project-box {
+      flex-basis: 47%;
+      &:nth-child(odd) {
+        margin-right: 6%;
+      }
+      &:nth-child(even) {
+        margin-top: 10%;
+      }
+      @include media("<=tablet") {
+        flex-basis: 100%;
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+        &:nth-child(even) {
+          margin-top: 0;
+        }
+      }
+      .project-img-box {
+        position: relative;
+        height: 400px;
+        display: flex;
+        align-items: flex-end;
+        box-shadow: 5px 5px 2px $purple;
+        canvas {
+          position: absolute;
+          z-index: 0;
+        }
+      }
+      h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+        word-spacing: 0.2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+      .btn-container {
+        a {
+          display: inline-block;
+          letter-spacing: 0.05rem;
+          color: $black;
+          text-decoration: none;
+          font-weight: 600;
+          &:first-child {
+            margin-right: 2rem;
+          }
+          @include media("<=tablet") {
+            margin-right: 1rem;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            background: $purple;
+            transition: width 0.4s;
+          }
+          &:hover {
+            &::after {
+              width: 97%;
+              transition: width 0.4s;
+            }
+          }
+          &.disabled {
+            pointer-events: none;
+            cursor: default;
+            color: lighten($black, 40%);
+          }
+        }
+      }
+      @include media("<=tablet") {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
