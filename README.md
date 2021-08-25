@@ -1,4 +1,4 @@
-This is a sample portfolio website created with Gatsby and Sass.
+This is a single page website built with Gatsby and Sass.
 
 It includes:
 <ul>
